@@ -1,0 +1,4 @@
+rootProject.name = 'ClevertecGradle'
+include 'api'
+include 'core'
+
