@@ -1,9 +1,21 @@
 plugins {
     id 'java'
 }
+group 'ru.clevertec'
+version '1.0'
 
 dependencies {
     implementation project(":core")
+}
+
+jar {
+    manifest {
+        attributes ('Implementation-Version': project.version,
+                'Implementation-Title': project.name,
+                'Main-Class': 'ru.clevertec.App')
+    }
+
+    from(configurations.runtimeClasspath.files.collect { zipTree(it) })
 }
 
 
